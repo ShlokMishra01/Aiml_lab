@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.uv/
+uv.lock
+*.whl
+
+# Jupyter
+.ipynb_checkpoints/
+.virtual_documents/
+
+# Databricks
+.databricks/
+.dbsql-project/
+
+# Data & outputs (generated)
+data/*
+!data/README.md
+outputs/
+*.parquet
+*.db
+*.sqlite
+*.duckdb
+*.gguf
+*.bin
+
+# Model caches
+.cache/
+models/
+~/.cache/
+
+# Secrets & env
+.env
+.env.*
+!.env.example
+*.pem
+secrets/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/settings.json.example
+*.swp
+
+# Node
+node_modules/
+
+# Internal working files (never published: session logs, scratch, drafts)
+internal/
+session-logs/
+*.session.zip
+.impeccable/
+
+# Build artifacts
+dist/
+build/
+*.xlsx.tmp
+
+# Additional privatesm automation exclusions
+logs/
+*.log
+*.tmp
+*.temp

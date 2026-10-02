@@ -1,0 +1,1549 @@
+{
+  "program": {
+    "name": "AI Engineering Lab: a 24-Week AI Engineering Program",
+    "brand": "Zorost Intelligence",
+    "brand_url": "https://zorost.com",
+    "tagline": "Find the Signal. Act with Intelligence.",
+    "weeks": 24,
+    "case_study": "ZoroLogistics",
+    "case_study_description": "A fictional freight company used as the single running case study across all 24 weeks.",
+    "generated_by": "scripts/build_tracker.py",
+    "last_updated": "2026-08-17"
+  },
+  "phases": [
+    {
+      "id": "phase-1",
+      "name": "Foundations",
+      "weeks": "1 to 4",
+      "description": "Python, data engineering, classical ML, and deep learning, taught the AI engineering way: every model ships with a metric, a split, and an error analysis.",
+      "categories": [
+        "Python & Environment",
+        "Data & SQL",
+        "Classical ML",
+        "Deep Learning"
+      ],
+      "items": [
+        {
+          "week": 1,
+          "title": "Python Foundations & the AI Engineering Landscape",
+          "section": "Foundations",
+          "category": "Python & Environment",
+          "objective": "Set up a professional AI engineering environment and understand the discipline (Ng's four skills and three loops) while generating the dataset the whole program reuses.",
+          "topics": [
+            "What an AI engineer is: Ng's four skills + three loops",
+            "Program map and the ZoroLogistics case study",
+            "VS Code, Python environments (uv/conda), Jupyter",
+            "Git & GitHub workflow (fork, branch, commit, PR)",
+            "Python: types, functions, classes, collections, comprehensions",
+            "Files, JSON, CSV; NumPy basics",
+            "Synthetic data generation with deterministic seeds"
+          ],
+          "use_case": "Generate the ZoroLogistics synthetic dataset (shipments, carriers, lanes) that every future week reuses.",
+          "deliverables": [
+            "Working local environment (checklist notebook passes)",
+            "ZoroLogistics data generator (100k rows, seeded)",
+            "Data dictionary for the generated dataset"
+          ],
+          "notebooks": [
+            "notebooks/01-environment-and-tools.ipynb",
+            "notebooks/02-zorologistics-data-generator.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/01-ai-engineering-discipline.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Set up VS Code, Python environment (uv or conda), and git; fork/clone the repo."
+            },
+            {
+              "day": "Tue",
+              "task": "Complete the Python refresher exercises in the environment notebook."
+            },
+            {
+              "day": "Wed",
+              "task": "Run the environment check notebook end-to-end (versions, imports, deterministic seed)."
+            },
+            {
+              "day": "Thu",
+              "task": "Build the ZoroLogistics data generator: shipments, carriers, lanes, deterministic seeds."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: generate the 100k-row dataset, save to CSV/Parquet, commit it with a data dictionary."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 1 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker: Week 1 checked off; push your fork to GitHub."
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Data Engineering & SQL for AI",
+          "section": "Foundations",
+          "category": "Data & SQL",
+          "objective": "Clean, profile, and validate real-feeling data with pandas and SQL, and learn the reproducibility habits AI work depends on.",
+          "topics": [
+            "pandas: filter, group, join, pivot, dtypes",
+            "Missing data, outliers, and data quality",
+            "Profiling and summary statistics",
+            "SQL with DuckDB: joins, aggregations, window functions",
+            "Data validation (pandera) with explicit checks",
+            "Dataset versioning and reproducibility"
+          ],
+          "use_case": "Clean and profile the raw shipment dataset into an analytics-ready 'silver' table.",
+          "deliverables": [
+            "Silver dataset + validation suite (10+ checks)",
+            "SQL analytics queries (on-time rate by carrier/lane/month)",
+            "Data profile report"
+          ],
+          "notebooks": [
+            "notebooks/01-pandas-cleaning.ipynb",
+            "notebooks/02-sql-with-duckdb.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/02-ml-dl-fundamentals.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study data quality concepts; run the pandas refresher exercises."
+            },
+            {
+              "day": "Tue",
+              "task": "Run the pandas cleaning notebook; find and document 5 data issues in the generator output."
+            },
+            {
+              "day": "Wed",
+              "task": "Write SQL queries in DuckDB: on-time rate by carrier/lane/month, windows, top-lane analysis."
+            },
+            {
+              "day": "Thu",
+              "task": "Add a data validation suite (pandera) with at least 10 checks."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: deliver the cleaned silver dataset + profile report; document every cleaning decision."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 2 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the silver pipeline script."
+            }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Machine Learning Fundamentals",
+          "section": "Foundations",
+          "category": "Classical ML",
+          "objective": "Train, evaluate, and compare classical ML models with a rigorous split, metrics, and a first error analysis.",
+          "topics": [
+            "Supervised learning: regression vs classification",
+            "Train/val/test splits, time-aware for freight data",
+            "scikit-learn: linear models, trees, ensembles",
+            "Metrics: MAE, RMSE, accuracy, precision/recall, F1",
+            "Cross-validation; feature scaling",
+            "Bias/variance, overfitting, baselines"
+          ],
+          "use_case": "Baseline ETA (estimated time of arrival) regression and on-time classification from shipment features.",
+          "deliverables": [
+            "ETA regression baseline with logged metrics",
+            "On-time classifier with threshold tradeoff analysis",
+            "Week 3 model card (metric, split, top error source)"
+          ],
+          "notebooks": [
+            "notebooks/01-eta-regression-baseline.ipynb",
+            "notebooks/02-on-time-classification.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/02-ml-dl-fundamentals.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study supervised learning and the eval mindset: pick the metric before the model."
+            },
+            {
+              "day": "Tue",
+              "task": "Run the ETA regression baseline; log MAE/RMSE for 3 models in a comparison table."
+            },
+            {
+              "day": "Wed",
+              "task": "Implement a time-aware split and cross-validation; compare models fairly."
+            },
+            {
+              "day": "Thu",
+              "task": "On-time classification: precision/recall/F1, threshold tradeoff, confusion matrix."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: write the Week 3 model card (metric, split, top error source) and commit it."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 3 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; log all experiments to a JSON experiment log."
+            }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Deep Learning with PyTorch",
+          "section": "Foundations",
+          "category": "Deep Learning",
+          "objective": "Build and train a neural network in PyTorch, tune it with validation, and do the first real error analysis, the habit that defines AI engineering.",
+          "topics": [
+            "Tensors, GPU/MPS acceleration",
+            "Autograd and the computation graph",
+            "nn.Module, linear layers, activations",
+            "Loss functions and optimizers; the training loop",
+            "Batches, DataLoader, learning curves",
+            "Regularization: dropout, weight decay",
+            "Unpredictable outputs and why DL needs evals + error analysis"
+          ],
+          "use_case": "A neural ETA model that beats the Week 3 baseline, with a first error analysis by carrier and lane.",
+          "deliverables": [
+            "PyTorch MLP training notebook with learning curves",
+            "Neural vs baseline comparison on the test set",
+            "Error analysis note: biggest error cluster + hypothesis"
+          ],
+          "notebooks": [
+            "notebooks/01-pytorch-tensors-and-autograd.ipynb",
+            "notebooks/02-mlp-eta-train-and-eval.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/02-ml-dl-fundamentals.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study tensors, autograd, and the computation-graph mental model."
+            },
+            {
+              "day": "Tue",
+              "task": "Run the MLP notebook; verify loss curves; deliberately break one thing and diagnose it."
+            },
+            {
+              "day": "Wed",
+              "task": "Add dropout/weight decay; tune 3 hyperparameters using the validation split."
+            },
+            {
+              "day": "Thu",
+              "task": "Compare neural vs baseline on the test set; segment errors by carrier and lane."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: write the error-analysis note (biggest error cluster + hypothesis)."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 4 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit model card v2."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-2",
+      "name": "LLM Core",
+      "weeks": "5 to 8",
+      "description": "How LLMs actually work, from tokens and embeddings to attention and the KV cache, then the two engineering superpowers on top: prompt & context-window engineering, and retrieval (RAG + knowledge graphs). Week 8 goes fully local.",
+      "categories": [
+        "LLM Internals",
+        "Prompt & Context",
+        "Retrieval & Graphs",
+        "Local Models & GPUs"
+      ],
+      "items": [
+        {
+          "week": 5,
+          "title": "How LLMs Work: Tokens to Transformers",
+          "section": "LLM Core",
+          "category": "LLM Internals",
+          "objective": "Build the correct mental model of what happens between your prompt and the answer: tokenization, embeddings, attention, and generation.",
+          "topics": [
+            "Tokenization: BPE, vocabularies, token counts",
+            "Embeddings: from words to contextual vectors",
+            "Self-attention and transformer blocks",
+            "KV cache and why it matters for cost/latency",
+            "Mixture-of-experts (MoE) and model families",
+            "Pretraining vs fine-tuning",
+            "Generation: temperature, top-p, sampling"
+          ],
+          "use_case": "Shipment-note token cost estimator plus embedding similarity search over commodity descriptions.",
+          "deliverables": [
+            "Tokenizer lab with cost estimator",
+            "Embedding similarity search over commodities",
+            "Context-window budget calculator"
+          ],
+          "notebooks": [
+            "notebooks/01-tokenization-lab.ipynb",
+            "notebooks/02-embeddings-and-attention-lab.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/03-llm-core-concepts.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study tokenization and embeddings (knowledge-base 03)."
+            },
+            {
+              "day": "Tue",
+              "task": "Tokenizer lab: BPE encode/decode and a token-cost estimator for the LLM API."
+            },
+            {
+              "day": "Wed",
+              "task": "Embeddings lab: similarity search over shipment commodity descriptions."
+            },
+            {
+              "day": "Thu",
+              "task": "Attention lab: implement scaled dot-product attention in NumPy; visualize the weights."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: build the context-window budget calculator (tokens per call vs window size)."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 5 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit both labs."
+            }
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Prompt Engineering & the Context Window",
+          "section": "LLM Core",
+          "category": "Prompt & Context",
+          "objective": "Engineer prompts and the context around them so a model does a real job reliably, measured by an eval, not by vibes.",
+          "topics": [
+            "Message roles and system prompts",
+            "Zero-shot, few-shot, chain-of-thought",
+            "Structured outputs (JSON schema)",
+            "Prompt iteration as a measured loop",
+            "Context budgets, compaction, prompt caching",
+            "Prompt injection and jailbreak awareness",
+            "Prompt versioning and eval sets"
+          ],
+          "use_case": "Extract bill-of-lading fields reliably with a prompt suite and per-field accuracy eval.",
+          "deliverables": [
+            "BoL extraction prompt suite + eval results",
+            "Structured-output pipeline",
+            "Context engineering measurements (tokens, latency, cache hits)"
+          ],
+          "notebooks": [
+            "notebooks/01-prompt-suite-bol-extraction.ipynb",
+            "notebooks/02-context-engineering.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/04-prompt-context-engineering.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study prompt engineering and context engineering (knowledge-base 04)."
+            },
+            {
+              "day": "Tue",
+              "task": "Build the BoL extraction prompt suite; run it against 20 synthetic documents."
+            },
+            {
+              "day": "Wed",
+              "task": "Add structured outputs and few-shot examples; improve per-field accuracy."
+            },
+            {
+              "day": "Thu",
+              "task": "Context engineering: budgets, compaction, caching. Measure tokens and latency."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: reach 90%+ field accuracy on the eval set; document the failure cases."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 6 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the prompt suite and eval results."
+            }
+          ]
+        },
+        {
+          "week": 7,
+          "title": "RAG, Vector Search & Knowledge Graphs",
+          "section": "LLM Core",
+          "category": "Retrieval & Graphs",
+          "objective": "Ground model answers in a corpus (RAG with citations) and in structure (knowledge graphs), and measure retrieval quality.",
+          "topics": [
+            "Embeddings for retrieval; chunking strategies",
+            "Vector databases: Chroma, FAISS, pgvector, Weaviate",
+            "Hybrid search and reranking",
+            "Citations and groundedness evaluation",
+            "Knowledge graphs: nodes, edges, queries",
+            "GraphRAG and when graphs beat vectors"
+          ],
+          "use_case": "A shipping-policy Q&A bot (RAG with citations) plus a carrier-lane-port knowledge graph.",
+          "deliverables": [
+            "RAG policy bot with citations",
+            "Retrieval accuracy and groundedness measurements",
+            "Carrier-lane-port graph with route queries"
+          ],
+          "notebooks": [
+            "notebooks/01-rag-policy-bot.ipynb",
+            "notebooks/02-knowledge-graph-lab.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/05-rag-graph-engineering.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study retrieval fundamentals (knowledge-base 05)."
+            },
+            {
+              "day": "Tue",
+              "task": "Chunk and embed the policy corpus; build a vector index; measure baseline retrieval accuracy."
+            },
+            {
+              "day": "Wed",
+              "task": "Add hybrid search and reranking; cite sources in answers; measure groundedness."
+            },
+            {
+              "day": "Thu",
+              "task": "Build the carrier-lane-port graph in Neo4j; query shortest and cheapest routes."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: the RAG bot answers 10 unseen questions with citations; log retrieval misses."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 7 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit RAG and graph labs."
+            }
+          ]
+        },
+        {
+          "week": 8,
+          "title": "Open Models & Local Inference: GPUs, Ollama, llama.cpp",
+          "section": "LLM Core",
+          "category": "Local Models & GPUs",
+          "objective": "Run open models on your own hardware: pick models by license and VRAM, and operate the local stack (Ollama, llama.cpp, MLX) with confidence.",
+          "topics": [
+            "Open vs closed models; licenses (Apache-2.0, Llama, etc.)",
+            "Model families: Llama, Mistral, Qwen, Gemma, DeepSeek, Phi",
+            "Hugging Face Hub workflows",
+            "GGUF format; Ollama, llama.cpp, LM Studio, MLX",
+            "GPU setup: CUDA, Apple Metal/MPS, AMD ROCm",
+            "VRAM math and model sizing",
+            "Local structured outputs and privacy use cases"
+          ],
+          "use_case": "Run a local model to triage support tickets offline, plus a VRAM sizing calculator for model choice.",
+          "deliverables": [
+            "Local model playground notebook",
+            "Backend benchmark table (tokens/sec)",
+            "VRAM-based model picker"
+          ],
+          "notebooks": [
+            "notebooks/01-local-model-playground.ipynb",
+            "notebooks/02-vram-sizing-and-model-selection.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/08-local-inference-gpu.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study the model landscape: open vs closed, licenses, families (knowledge-base 08)."
+            },
+            {
+              "day": "Tue",
+              "task": "Install Ollama; pull a small model; run chat and structured outputs locally."
+            },
+            {
+              "day": "Wed",
+              "task": "Try llama.cpp and MLX; compare tokens/sec across backends in a table."
+            },
+            {
+              "day": "Thu",
+              "task": "GPU setup check: CUDA/MPS/ROCm; benchmark with a small script."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: ticket triage with a local model + the VRAM-based model picker."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 8 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the benchmark table and picker."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-3",
+      "name": "Model Engineering",
+      "weeks": "9 to 11",
+      "description": "Make models cheaper and yours: quantization formats and serving engines, fine-tuning with LoRA/SFT/DPO, and the discipline that decides it all, evals and error analysis.",
+      "categories": [
+        "Quantization & Serving",
+        "Fine-tuning",
+        "Evaluation"
+      ],
+      "items": [
+        {
+          "week": 9,
+          "title": "Quantization & Efficient Inference",
+          "section": "Model Engineering",
+          "category": "Quantization & Serving",
+          "objective": "Shrink models without breaking them, serve them with vLLM, and make quality-vs-cost decisions from data.",
+          "topics": [
+            "Numeric formats: FP32/FP16/BF16/INT8/INT4/FP8",
+            "GGUF k-quants; bitsandbytes 8/4-bit; AWQ, GPTQ",
+            "Measuring quality loss: perplexity and task evals",
+            "Serving engines: vLLM, SGLang, TGI",
+            "Batching, throughput vs latency",
+            "OpenAI-compatible serving APIs"
+          ],
+          "use_case": "Quantize the triage model, serve it with vLLM, and publish a quality-vs-speed report.",
+          "deliverables": [
+            "Quantization sweep with quality measurements",
+            "vLLM serving + benchmark notebook",
+            "Quality-vs-cost report with a production recommendation"
+          ],
+          "notebooks": [
+            "notebooks/01-quantization-lab.ipynb",
+            "notebooks/02-vllm-serving-and-benchmarks.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/06-model-engineering.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study numeric formats and quantization methods (knowledge-base 06)."
+            },
+            {
+              "day": "Tue",
+              "task": "Quantize a 7B or 8B model with bitsandbytes; measure quality on the triage eval."
+            },
+            {
+              "day": "Wed",
+              "task": "GGUF sweep with llama.cpp: Q4/Q5/Q8; record perplexity and speed."
+            },
+            {
+              "day": "Thu",
+              "task": "Serve with vLLM (OpenAI-compatible API); benchmark latency and throughput."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: publish the quality-vs-cost report; pick the production quantization."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 9 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the report."
+            }
+          ]
+        },
+        {
+          "week": 10,
+          "title": "Fine-Tuning: LoRA, SFT & DPO",
+          "section": "Model Engineering",
+          "category": "Fine-tuning",
+          "objective": "Fine-tune small open models efficiently (LoRA/SFT/DPO) and decide, with before/after evals, whether the fine-tune earns deployment.",
+          "topics": [
+            "When to fine-tune vs prompt/RAG (selection order)",
+            "PEFT: LoRA, QLoRA, DoRA",
+            "SFT dataset formats and chat templates",
+            "Hugging Face TRL; Unsloth; Axolotl",
+            "DPO and preference data",
+            "Before/after evals; catastrophic forgetting checks",
+            "Fine-tuning on a budget (free Colab tier)"
+          ],
+          "use_case": "Fine-tune a small open model on ZoroLogistics support tone and bill-of-lading entity extraction.",
+          "deliverables": [
+            "SFT dataset built from the Week 6 corpus",
+            "LoRA adapter + training logs",
+            "Before/after eval table and a deploy/no-deploy decision"
+          ],
+          "notebooks": [
+            "notebooks/01-sft-dataset-and-lora-training.ipynb",
+            "notebooks/02-dpo-and-before-after-evals.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/06-model-engineering.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study fine-tuning theory and the selection order (knowledge-base 06)."
+            },
+            {
+              "day": "Tue",
+              "task": "Build the SFT dataset (instructions + responses) from the Week 6 corpus."
+            },
+            {
+              "day": "Wed",
+              "task": "Train LoRA with TRL/Unsloth (Colab free tier or local GPU); log loss curves."
+            },
+            {
+              "day": "Thu",
+              "task": "Create preference pairs; run a small DPO step; compare before/after on the eval."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: publish the before/after eval table; decide deploy vs iterate."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 10 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the adapter and eval results."
+            }
+          ]
+        },
+        {
+          "week": 11,
+          "title": "Evals & Error Analysis for AI Systems",
+          "section": "Model Engineering",
+          "category": "Evaluation",
+          "objective": "Build the reusable eval harness (ZoroEval) that gates every AI artifact in this program, the core AI engineering habit.",
+          "topics": [
+            "Eval design: golden sets and what to measure",
+            "LLM-as-judge and rubrics; judge reliability",
+            "Traces and spans",
+            "Human-level parity (HLP) as the ceiling",
+            "Error clustering and prioritization",
+            "Evals in CI; regression suites; drift monitoring"
+          ],
+          "use_case": "Build ZoroEval, the reusable eval harness that gates every ZoroLogistics AI artifact.",
+          "deliverables": [
+            "Golden eval sets for extraction, RAG, and triage",
+            "LLM-as-judge with a calibrated rubric",
+            "ZoroEval harness + CI-style gate script"
+          ],
+          "notebooks": [
+            "notebooks/01-zoroeval-harness.ipynb",
+            "notebooks/02-error-analysis-workshop.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/07-evals-error-analysis.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study evals and error analysis (knowledge-base 07 + Ng's letters)."
+            },
+            {
+              "day": "Tue",
+              "task": "Define golden eval sets for extraction, RAG, and triage; implement LLM-as-judge with a rubric."
+            },
+            {
+              "day": "Wed",
+              "task": "Run the judges; measure judge agreement; calibrate the rubric."
+            },
+            {
+              "day": "Thu",
+              "task": "Error analysis: cluster failures from Weeks 6 to 10 artifacts; pick the top fix."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: ZoroEval v1 gates one artifact in a CI-style script; document the loop."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 11 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit ZoroEval."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-4",
+      "name": "Harnesses & Loops",
+      "weeks": "12 to 13",
+      "description": "Become dangerous with coding agents: Claude Code, Cursor, OpenCode, DeepSeek Harness, then run the three loops (agentic coding \u2192 developer feedback \u2192 external feedback) with a spec, a verifier, and a blast-radius rule.",
+      "categories": [
+        "Harnesses",
+        "Loops & Specs"
+      ],
+      "items": [
+        {
+          "week": 12,
+          "title": "Coding-Agent Harnesses: Claude Code, Cursor, OpenCode, DSH",
+          "section": "Harnesses & Loops",
+          "category": "Harnesses",
+          "objective": "Set up and steer the major coding-agent harnesses, and build a real CLI tool with an agent from a spec.",
+          "topics": [
+            "Harness landscape and how to choose",
+            "Setup/auth: Claude Code, Cursor, OpenCode, DeepSeek Harness",
+            "Rules files: CLAUDE.md / AGENTS.md",
+            "Managed context: what goes in, what stays out",
+            "Planning vs execution modes",
+            "Subagents and parallelism",
+            "OpenRouter for model routing; cost control"
+          ],
+          "use_case": "Build the ZoroLogistics ETA CLI (query tool) entirely with a coding agent from a written spec.",
+          "deliverables": [
+            "ETA CLI built agentically, with tests green",
+            "Harness setup + comparison notebook",
+            "1-page harness comparison write-up"
+          ],
+          "notebooks": [
+            "notebooks/01-harness-setup-and-comparison.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/09-harnesses-tools.md"
+          ],
+          "skills": [
+            "reference/skills/claude-code.md",
+            "reference/skills/cursor.md",
+            "reference/skills/deepseek-harness.md",
+            "reference/skills/opencode.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Install and authenticate 2 harnesses (Claude Code + OpenCode or DSH); read the skill guides."
+            },
+            {
+              "day": "Tue",
+              "task": "Write SPEC.md for the ETA CLI: user, constraints, one refused tradeoff, test plan."
+            },
+            {
+              "day": "Wed",
+              "task": "Drive the agent to build the CLI; run the tests; iterate until green."
+            },
+            {
+              "day": "Thu",
+              "task": "Repeat the same task in a second harness; compare plans, cost, and code quality."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: ship the CLI; write the 1-page harness comparison for your team."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 12 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the CLI and comparison."
+            }
+          ]
+        },
+        {
+          "week": 13,
+          "title": "Agentic Coding Loops & Spec-Driven Development",
+          "section": "Harnesses & Loops",
+          "category": "Loops & Specs",
+          "objective": "Run Ng's three loops on a real MVP: spec \u2192 agentic coding with a verifier \u2192 developer review \u2192 external feedback.",
+          "topics": [
+            "The three loops and their cadences",
+            "SPEC.md patterns and updates",
+            "Verifiers: tests, evals, type checks, linters",
+            "Hooks and skills in the harness",
+            "MCP in the coding loop",
+            "Subagent orchestration",
+            "Blast-radius rules: production data, secrets, irreversible commands",
+            "Measuring the loop: time, tokens, defects"
+          ],
+          "use_case": "Ship the ZoroLogistics Support Bot MVP through the full three-loop cycle with evals closing every loop.",
+          "deliverables": [
+            "Support bot MVP with a green verifier (unit tests + eval)",
+            "Loop log (agentic/developer/external cycles)",
+            "Spec updates driven by feedback"
+          ],
+          "notebooks": [
+            "notebooks/01-loop-log-and-eval-gates.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/01-ai-engineering-discipline.md",
+            "reference/knowledge-base/09-harnesses-tools.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study the three loops and verifier patterns (knowledge-base 01)."
+            },
+            {
+              "day": "Tue",
+              "task": "Spec the support bot MVP; define the verifier (eval suite + unit tests)."
+            },
+            {
+              "day": "Wed",
+              "task": "Agentic loop session: build \u2192 test \u2192 fix until the verifier passes; log the loop."
+            },
+            {
+              "day": "Thu",
+              "task": "Developer loop: review with fresh eyes, update the spec, add missed edge cases."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: external loop. Have someone real use the bot; file issues; update spec + evals."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 13 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the MVP and loop log."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-5",
+      "name": "Agents",
+      "weeks": "14 to 17",
+      "description": "From a hand-written ReAct loop to LangGraph state graphs, multi-agent orchestration, and MCP, then OpenClaw as a personal assistant and agent operations.",
+      "categories": [
+        "Agent Core",
+        "Frameworks",
+        "Multi-Agent & Protocols",
+        "Personal Agents & Ops"
+      ],
+      "items": [
+        {
+          "week": 14,
+          "title": "Agent Fundamentals: The Loop, Tools & Memory",
+          "section": "Agents",
+          "category": "Agent Core",
+          "objective": "Build an agent from scratch (no framework) so you own the mental model: loop, tools, planning, reflection, guardrails, and traces.",
+          "topics": [
+            "What an agent is; the perceive-plan-act loop",
+            "ReAct reasoning + acting",
+            "Tool/function calling and structured outputs",
+            "Planning and reflection; stopping conditions",
+            "Memory: scratchpad vs long-term",
+            "Guardrails, permissions, and cost caps",
+            "Traces as the debugger"
+          ],
+          "use_case": "Build the shipment-tracking agent from scratch: lookup, calculator, and web tools.",
+          "deliverables": [
+            "Hand-written agent with 3+ tools",
+            "Trace log of every run",
+            "Guardrail tests (refusal, max steps, cost cap)"
+          ],
+          "notebooks": [
+            "notebooks/01-react-agent-from-scratch.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/10-agents-multiagent.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study the agent loop and ReAct (knowledge-base 10)."
+            },
+            {
+              "day": "Tue",
+              "task": "Implement the tool-calling loop by hand; wire 2 tools (track shipment, convert units)."
+            },
+            {
+              "day": "Wed",
+              "task": "Add planning and reflection; log every step: the trace is your debugger."
+            },
+            {
+              "day": "Thu",
+              "task": "Add guardrails: refusal, max steps, cost cap; test adversarial inputs."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: the agent solves 10 unseen scenarios; publish the trace log."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 14 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the agent and traces."
+            }
+          ]
+        },
+        {
+          "week": 15,
+          "title": "Agent Frameworks: LangGraph & the State-Graph Model",
+          "section": "Agents",
+          "category": "Frameworks",
+          "objective": "Move from hand-rolled loops to LangGraph: state, checkpoints, streaming, and human-in-the-loop, and know when a framework earns its complexity.",
+          "topics": [
+            "Why frameworks; the state-graph mental model",
+            "LangGraph: nodes, edges, state, conditional routing",
+            "Checkpoints, resume, and time-travel debugging",
+            "Streaming outputs",
+            "Human-in-the-loop interrupts",
+            "Memory across sessions",
+            "Framework comparison: OpenAI Agents SDK, smolagents, Pydantic AI, CrewAI"
+          ],
+          "use_case": "Re-implement the support agent in LangGraph with a human approval step for refunds.",
+          "deliverables": [
+            "LangGraph support agent with visualized graph",
+            "Checkpoint/resume demonstration",
+            "Human-in-the-loop refund approval flow"
+          ],
+          "notebooks": [
+            "notebooks/01-langgraph-support-agent.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/10-agents-multiagent.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study graph-based agent design (knowledge-base 10 + LangGraph docs)."
+            },
+            {
+              "day": "Tue",
+              "task": "Port the Week 14 agent to LangGraph; visualize the graph."
+            },
+            {
+              "day": "Wed",
+              "task": "Add checkpoints and resume; crash mid-run and recover."
+            },
+            {
+              "day": "Thu",
+              "task": "Add the human-in-the-loop interrupt for refunds over $500."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: end-to-end run with approval; record latency and tokens per node."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 15 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the graph agent."
+            }
+          ]
+        },
+        {
+          "week": 16,
+          "title": "Multi-Agent Systems & MCP",
+          "section": "Agents",
+          "category": "Multi-Agent & Protocols",
+          "objective": "Orchestrate a team of agents only where it beats one good agent, measured, and connect everything with MCP.",
+          "topics": [
+            "When multi-agent is worth it (and when it isn't)",
+            "Orchestration: supervisor, handoff, debate, swarm",
+            "Context isolation and message passing",
+            "MCP architecture: host, client, server; tools/resources/prompts",
+            "Building and testing MCP servers",
+            "A2A and other inter-agent protocols",
+            "Evaluating the team vs the single agent"
+          ],
+          "use_case": "A support triage team: router + specialists (tracking, refunds, docs) over MCP tools.",
+          "deliverables": [
+            "MCP server exposing ZoroLogistics tools",
+            "Multi-agent triage team",
+            "A/B report: multi-agent vs single agent"
+          ],
+          "notebooks": [
+            "notebooks/01-mcp-server-lab.ipynb",
+            "notebooks/02-multiagent-triage-team.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/10-agents-multiagent.md",
+            "reference/knowledge-base/11-mcp-ecosystem.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study orchestration patterns and MCP (knowledge-base 10/11)."
+            },
+            {
+              "day": "Tue",
+              "task": "Build an MCP server exposing ZoroLogistics tools; test with an MCP inspector."
+            },
+            {
+              "day": "Wed",
+              "task": "Build the multi-agent triage team (supervisor + 3 specialists)."
+            },
+            {
+              "day": "Thu",
+              "task": "A/B test: multi-agent vs single agent on the same 10 tasks; measure quality and cost."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: publish the A/B report; justify your architecture decision."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 16 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the team and the MCP server."
+            }
+          ]
+        },
+        {
+          "week": 17,
+          "title": "OpenClaw, Hermes & Agent Operations",
+          "section": "Agents",
+          "category": "Personal Agents & Ops",
+          "objective": "Run OpenClaw as a personal AI assistant with skills and a context loop, drive it with Hermes-class open models, and add the production layer: tracing, evals, and cost.",
+          "topics": [
+            "OpenClaw: gateway, channels, skills, plugins",
+            "The OpenClaw context loop and compaction",
+            "OpenClaw security model: modes and permissions",
+            "Hermes-class open agentic models (Nous Research family)",
+            "Running agent brains locally via Ollama",
+            "Agent ops: tracing (Langfuse/LangSmith), production evals",
+            "Cost dashboards and incident patterns"
+          ],
+          "use_case": "Deploy a personal ZoroLab assistant (OpenClaw) wired to your MCP server, driven by a Hermes-class model.",
+          "deliverables": [
+            "Working OpenClaw installation with 2 custom skills",
+            "MCP integration with the Week 16 server",
+            "Agent ops runbook (tracing + cost)"
+          ],
+          "notebooks": [
+            "notebooks/01-agent-ops-observability.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/10-agents-multiagent.md"
+          ],
+          "agents": [
+            "reference/agents/openclaw.md",
+            "reference/agents/hermes.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Study OpenClaw and Hermes (reference/agents/ guides + knowledge-base 10)."
+            },
+            {
+              "day": "Tue",
+              "task": "Install and configure OpenClaw locally; connect a channel (WebChat or Telegram)."
+            },
+            {
+              "day": "Wed",
+              "task": "Write 2 OpenClaw skills; wire the Week 16 MCP server; test the context loop."
+            },
+            {
+              "day": "Thu",
+              "task": "Swap in a Hermes-class model via Ollama; compare assistant quality."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: add tracing and cost tracking to the assistant; publish the ops runbook."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 17 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit skills and the runbook."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-6",
+      "name": "Cloud AI Platforms",
+      "weeks": "18 to 20",
+      "description": "The same ZoroLogistics support agent, deployed three ways: Azure AI Foundry (Microsoft), Vertex AI + AI Studio (Google), Bedrock + SageMaker (AWS). Compare capabilities, governance, and cost, then learn how to pick.",
+      "categories": [
+        "Microsoft",
+        "Google",
+        "AWS"
+      ],
+      "items": [
+        {
+          "week": 18,
+          "title": "Azure AI Foundry",
+          "section": "Cloud AI Platforms",
+          "category": "Microsoft",
+          "objective": "Deploy and evaluate the support agent on Azure AI Foundry: serverless endpoints, agents, evaluation, and AI Gateway governance.",
+          "topics": [
+            "Foundry hubs and projects",
+            "Model catalog and serverless endpoints; Azure OpenAI relationship",
+            "Agents in Foundry (Microsoft Agent Framework)",
+            "Evaluation and tracing",
+            "AI Gateway (APIM GenAI policies): rate limits, safety",
+            "Content safety filters",
+            "SDKs (azure-ai-projects, OpenAI SDK); pricing"
+          ],
+          "use_case": "Deploy the support agent to Foundry with online evaluation and gateway rate limits.",
+          "deliverables": [
+            "Serverless endpoint callable from Python",
+            "Foundry agent with tools + evaluation trace",
+            "Gateway-governed endpoint with documented cost"
+          ],
+          "notebooks": [
+            "notebooks/01-foundry-serverless-endpoints.ipynb",
+            "notebooks/02-foundry-agent-evaluation.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/12-cloud-platforms.md"
+          ],
+          "platforms": [
+            "reference/platforms/ai-foundry/README.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Set up the Azure subscription and AI Foundry hub/project (free tier)."
+            },
+            {
+              "day": "Tue",
+              "task": "Deploy a serverless model endpoint; call it from the Python SDK and OpenAI SDK."
+            },
+            {
+              "day": "Wed",
+              "task": "Create the support agent in Foundry with tools; test in the playground."
+            },
+            {
+              "day": "Thu",
+              "task": "Run an online evaluation batch; read the trace; fix the worst failure."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: put the agent behind the AI Gateway (rate limit + content safety); publish cost."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 18 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the Foundry deployment guide."
+            }
+          ]
+        },
+        {
+          "week": 19,
+          "title": "Google Vertex AI & Gemini",
+          "section": "Cloud AI Platforms",
+          "category": "Google",
+          "objective": "Use Gemini across AI Studio (fast) and Vertex AI (governed), build a multimodal document pipeline, and evaluate agents on Vertex.",
+          "topics": [
+            "Gemini family and naming",
+            "AI Studio (free tier) vs Vertex AI (enterprise)",
+            "Model Garden; Agent Builder/Agent Engine + ADK",
+            "Vertex evaluation and fine-tuning (SFT)",
+            "BigQuery ML for in-warehouse ML",
+            "Colab; MCP support",
+            "Pricing tiers and quotas"
+          ],
+          "use_case": "A multimodal bill-of-lading pipeline: Gemini OCR \u2192 structured JSON \u2192 BigQuery table.",
+          "deliverables": [
+            "Multimodal OCR notebook with accuracy measurement",
+            "Support agent rebuilt with ADK/Agent Engine",
+            "End-to-end pipeline with cost per document"
+          ],
+          "notebooks": [
+            "notebooks/01-gemini-multimodal-ocr.ipynb",
+            "notebooks/02-vertex-agent-and-eval.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/12-cloud-platforms.md"
+          ],
+          "platforms": [
+            "reference/platforms/google-vertex/README.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Set up Google Cloud and AI Studio; get an API key; check quotas."
+            },
+            {
+              "day": "Tue",
+              "task": "Gemini multimodal lab: BoL images \u2192 structured JSON; measure accuracy."
+            },
+            {
+              "day": "Wed",
+              "task": "Recreate the support agent with ADK/Agent Engine; compare with the Foundry version."
+            },
+            {
+              "day": "Thu",
+              "task": "Run a Vertex evaluation on a golden set; log results to BigQuery."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: end-to-end pipeline (images \u2192 clean table); publish cost per document."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 19 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the Vertex guide."
+            }
+          ]
+        },
+        {
+          "week": 20,
+          "title": "AWS Bedrock & SageMaker AI",
+          "section": "Cloud AI Platforms",
+          "category": "AWS",
+          "objective": "Build on Bedrock (Converse API, Knowledge Bases, Agents, Guardrails) and SageMaker AI, then finish the three-cloud comparison.",
+          "topics": [
+            "Bedrock Converse API and model catalog (Claude, Nova, Llama, Mistral)",
+            "Knowledge Bases for RAG",
+            "Bedrock Agents; Guardrails; Prompt Management; AgentCore",
+            "SageMaker AI: training, JumpStart, HyperPod, Model Customization, serving",
+            "Amazon Q Developer/Business; PartyRock",
+            "IAM least privilege for AI",
+            "Pricing: on-demand vs provisioned throughput, cross-region inference"
+          ],
+          "use_case": "A Bedrock RAG support agent with Guardrails, plus the Great Platform Comparison matrix.",
+          "deliverables": [
+            "Converse API prompt-suite run across Bedrock models",
+            "Knowledge Base RAG with citations",
+            "Bedrock Agent + Guardrails; three-cloud comparison matrix"
+          ],
+          "notebooks": [
+            "notebooks/01-bedrock-converse-and-knowledge-bases.ipynb",
+            "notebooks/02-bedrock-agents-and-guardrails.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/12-cloud-platforms.md"
+          ],
+          "platforms": [
+            "reference/platforms/aws-bedrock/README.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Set up the AWS account and IAM least-privilege role; enable Bedrock models."
+            },
+            {
+              "day": "Tue",
+              "task": "Converse API lab: run the Week 6 prompt suite across Bedrock models."
+            },
+            {
+              "day": "Wed",
+              "task": "Build a Knowledge Base (RAG) for shipping policies; query with citations."
+            },
+            {
+              "day": "Thu",
+              "task": "Create a Bedrock Agent + Guardrails; test blocked prompts."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: publish the 3-cloud comparison matrix (Foundry vs Vertex vs Bedrock) with cost."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 20 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the AWS guide and matrix."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-7",
+      "name": "Databricks Zero to Hero",
+      "weeks": "21 to 24",
+      "description": "The full Zorost Databricks modernization playbook: Unity Catalog, Delta Lake medallion, DBSQL, PySpark, streaming, Lakeflow, MLflow, Mosaic AI, Genie, then DABs, CI/CD, governance, and FinOps, ending in the lakehouse capstone.",
+      "categories": [
+        "Platform & Data",
+        "Pipelines",
+        "ML & GenAI",
+        "Production & Capstone"
+      ],
+      "items": [
+        {
+          "week": 21,
+          "title": "Databricks Day Zero: Unity Catalog & the Lakehouse",
+          "section": "Databricks Zero to Hero",
+          "category": "Platform & Data",
+          "objective": "Stand up a governed lakehouse: Unity Catalog, Delta Lake, DBSQL, and the medallion architecture in pure SQL.",
+          "topics": [
+            "The Data Intelligence Platform and workspace anatomy",
+            "Unity Catalog: metastore, catalogs, schemas, volumes, tables",
+            "Compute: clusters, SQL warehouses, serverless",
+            "Notebooks and DBSQL",
+            "Delta Lake: ACID, time travel, VACUUM, OPTIMIZE, liquid clustering",
+            "Medallion architecture in SQL (bronze \u2192 silver \u2192 gold)",
+            "Delta Sharing"
+          ],
+          "use_case": "Stand up the ZoroLogistics lakehouse: bronze \u2192 silver \u2192 gold entirely in SQL.",
+          "deliverables": [
+            "Unity Catalog catalog/schema/volume with grants",
+            "Delta tables with time-travel demo",
+            "Silver/gold medallion tables + first AI/BI dashboard"
+          ],
+          "notebooks": [
+            "notebooks/01-unity-catalog-and-delta-lab.ipynb",
+            "notebooks/02-medallion-sql.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/13-databricks-overview.md"
+          ],
+          "platforms": [
+            "reference/platforms/databricks/README.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Create the Databricks account/workspace (free trial); tour the UI."
+            },
+            {
+              "day": "Tue",
+              "task": "Unity Catalog lab: create catalog/schema/volume; load CSV data; grant rights."
+            },
+            {
+              "day": "Wed",
+              "task": "Delta Lake lab: create tables, time travel, VACUUM, OPTIMIZE, liquid clustering."
+            },
+            {
+              "day": "Thu",
+              "task": "Medallion in SQL: bronze raw \u2192 silver clean \u2192 gold aggregates for shipments."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: governed silver/gold tables with lineage; build a first AI/BI dashboard."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 21 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the SQL notebooks."
+            }
+          ]
+        },
+        {
+          "week": 22,
+          "title": "Databricks Data Engineering: PySpark, Streaming & Lakeflow",
+          "section": "Databricks Zero to Hero",
+          "category": "Pipelines",
+          "objective": "Engineer data at scale with PySpark, streaming, and declarative Lakeflow Pipelines, with data quality expectations and scheduled Jobs.",
+          "topics": [
+            "PySpark DataFrames and transformations",
+            "Partitioning, Photon, performance",
+            "Structured Streaming: watermarks, state, checkpoints",
+            "Lakeflow Pipelines (formerly Delta Live Tables): streaming tables, materialized views, expectations",
+            "Lakeflow Jobs: DAGs, parameters, scheduling",
+            "Lakeflow Connect ingestion",
+            "Serverless compute for pipelines"
+          ],
+          "use_case": "A streaming pipeline: live shipment events \u2192 validated silver \u2192 on-time KPIs.",
+          "deliverables": [
+            "PySpark transformation notebook",
+            "DLT pipeline with expectations (data quality gates)",
+            "Scheduled Lakeflow Job + monitoring query"
+          ],
+          "notebooks": [
+            "notebooks/01-pyspark-data-engineering.ipynb",
+            "notebooks/02-streaming-and-dlt-pipeline.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/13-databricks-overview.md"
+          ],
+          "platforms": [
+            "reference/platforms/databricks/06-pipelines-jobs.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "PySpark lab: transform shipment data with DataFrames; compare with SQL."
+            },
+            {
+              "day": "Tue",
+              "task": "Write a DLT pipeline in Python (or SQL) with expectations on data quality."
+            },
+            {
+              "day": "Wed",
+              "task": "Add a streaming table for live shipment events (Auto Loader/streaming source)."
+            },
+            {
+              "day": "Thu",
+              "task": "Create a Lakeflow Job: schedule and orchestrate the pipeline; check runs and lineage."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: the streaming KPI pipeline passes quality gates; publish a monitoring query."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 22 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the pipeline code."
+            }
+          ]
+        },
+        {
+          "week": 23,
+          "title": "Databricks ML & GenAI: Training, Serving, Genie",
+          "section": "Databricks Zero to Hero",
+          "category": "ML & GenAI",
+          "objective": "Run the full Mosaic AI stack: MLflow, point-in-time feature engineering, model serving, Vector Search, AI functions, and Genie.",
+          "topics": [
+            "MLflow experiments and the model registry",
+            "UC feature engineering: feature tables, FeatureLookup, point-in-time joins",
+            "Training: scikit-learn/XGBoost/PyTorch, AutoML, Databricks Model Training",
+            "Model Serving endpoints + Unity AI Gateway",
+            "AI Search (Vector Search) and RAG on Databricks",
+            "AI functions: ai_query, ai_classify, ai_extract, ai_gen\u2026",
+            "Genie Agents; Agent Bricks and Agent Evaluation"
+          ],
+          "use_case": "A point-in-time ETA model + RAG over shipping docs + a Genie space for ops analysts.",
+          "deliverables": [
+            "Registered ETA model with point-in-time features",
+            "Serving endpoint behind the AI Gateway",
+            "Vector Search RAG + Genie space with verified answers"
+          ],
+          "notebooks": [
+            "notebooks/01-mlflow-feature-engineering-training.ipynb",
+            "notebooks/02-vector-search-rag.ipynb",
+            "notebooks/03-ai-functions-and-genie.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/13-databricks-overview.md"
+          ],
+          "platforms": [
+            "reference/platforms/databricks/README.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "MLflow + feature tables: log a baseline; build point-in-time features."
+            },
+            {
+              "day": "Tue",
+              "task": "Train the ETA model (XGBoost or PyTorch); register it in MLflow; compare challenger."
+            },
+            {
+              "day": "Wed",
+              "task": "Create the serving endpoint + AI Gateway rate limit; call from Python."
+            },
+            {
+              "day": "Thu",
+              "task": "Vector Search: index policy docs; build the RAG chain with ai_query."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: Genie space on the gold tables; verify its SQL; publish it."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 23 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker; commit the ML assets."
+            }
+          ]
+        },
+        {
+          "week": 24,
+          "title": "Databricks Production: DABs, Governance & the Capstone",
+          "section": "Databricks Zero to Hero",
+          "category": "Production & Capstone",
+          "objective": "Ship everything as code: Asset Bundles, CI/CD, governance, FinOps, then deploy the full ZoroLogistics Lakehouse Intelligence capstone.",
+          "topics": [
+            "Databricks Asset Bundles (databricks.yml): jobs, pipelines, dashboards as code",
+            "Databricks CLI and auth (OAuth U2M/M2M)",
+            "Git folders and CI/CD for bundles",
+            "Governance: row filters, column masks, dynamic views, lineage, system tables",
+            "FinOps: billing tables and cost dashboards",
+            "AI/BI dashboards and Databricks Apps",
+            "Certification paths (Data Engineer, Data Analyst, ML, GenAI Engineer)"
+          ],
+          "use_case": "Capstone: ZoroLogistics Lakehouse Intelligence, deploying the entire Weeks 21 to 23 stack via DABs.",
+          "deliverables": [
+            "DAB deployable end-to-end (pipeline + model + dashboard)",
+            "CI/CD workflow that validates and deploys",
+            "Governance + FinOps write-up; graduation checklist"
+          ],
+          "notebooks": [
+            "notebooks/01-governance-and-finopps.ipynb"
+          ],
+          "kb": [
+            "reference/knowledge-base/13-databricks-overview.md"
+          ],
+          "platforms": [
+            "reference/platforms/databricks/README.md"
+          ],
+          "checklist": [
+            {
+              "day": "Mon",
+              "task": "Bundle the Weeks 22 to 23 assets into a DAB; validate and deploy with the CLI."
+            },
+            {
+              "day": "Tue",
+              "task": "Add CI/CD: GitHub Actions validates and deploys the bundle."
+            },
+            {
+              "day": "Wed",
+              "task": "Governance: row filters + column masks + lineage review; write an audit query."
+            },
+            {
+              "day": "Thu",
+              "task": "FinOps: billing system-table dashboard; find one cost win; document it."
+            },
+            {
+              "day": "Fri",
+              "task": "Use case: capstone demo end-to-end + graduation checklist; publish your portfolio."
+            },
+            {
+              "day": "Sat",
+              "task": "Take the Week 24 quiz (quiz.md), pass with 8/10; record the score in Notes."
+            },
+            {
+              "day": "Milestone",
+              "task": "Update the Excel tracker: Week 24 done, program complete."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

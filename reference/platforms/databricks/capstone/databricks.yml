@@ -1,0 +1,99 @@
+# ZoroLogistics Lakehouse Intelligence, Declarative Automation Bundle
+# Part of AI Engineering Lab · Developed by Zorost Intelligence AI Lab · zorost.com
+#
+# Starter bundle: declares the medallion Lakeflow Pipeline and a Lakeflow Job that runs it.
+# Validate with: databricks bundle validate --strict
+# Deploy with: databricks bundle deploy -t dev
+
+bundle:
+  name: zorologistics-capstone
+
+# ---------------------------------------------------------------------------
+# Variables: parameterize catalog/schema/warehouse per target (dev vs prod).
+# ---------------------------------------------------------------------------
+variables:
+  catalog:
+    description: Unity Catalog catalog for ZoroLogistics data.
+    default: zrl_
+  schema:
+    description: Schema (database) inside the catalog.
+    default: zorologistics
+  warehouse_id:
+    description: SQL warehouse used by dashboards / Genie.
+    lookup:
+      warehouse: 'Shared SQL Warehouse'
+
+# ---------------------------------------------------------------------------
+# Targets: one per environment. Promotion = `bundle deploy -t prod`.
+# ---------------------------------------------------------------------------
+targets:
+  dev:
+    default: true
+    mode: development
+    workspace:
+      profile: zrl-dev
+    # Same catalog/schema as prod so the volume path in pipeline.sql is stable
+    # across targets. Override here if you want an isolated dev catalog.
+    variables:
+      catalog: zrl_
+      schema: zorologistics
+
+  prod:
+    mode: production
+    workspace:
+      profile: zrl-prod
+    variables:
+      catalog: zrl_
+      schema: zorologistics
+
+# ---------------------------------------------------------------------------
+# Resources (inlined here; split into resources/*.yml for larger bundles).
+# ---------------------------------------------------------------------------
+resources:
+  pipelines:
+    medallion:
+      name: 'ZoroLogistics Medallion'
+      catalog: ${var.catalog}
+      target: ${var.schema}
+
+      # SDP/Lakeflow libraries: the SQL below produces bronze → silver → gold.
+      libraries:
+        - file:
+            path:./src/pipeline.sql
+
+      # Run serverless with Photon; triggered (not continuous) for the starter.
+      serverless: true
+      photon: true
+      continuous: false
+      development: true
+      channel: current
+
+      permissions:
+        - level: CAN_VIEW
+          group_name: users
+
+  jobs:
+    etl_job:
+      name: 'ZoroLogistics Medallion ETL'
+      tags:
+        project: zorologistics-capstone
+        cost_center: ai-lab
+
+      tasks:
+        - task_key: run_medallion
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.medallion.id}
+
+      # Daily at 02:30 America/Chicago, uncomment to schedule.
+      # schedule:
+      # quartz_cron_expression: '0 30 2 * * ?'
+      # timezone_id: 'America/Chicago'
+
+  # --- AI/BI dashboard (add after exporting from the AI/BI editor) ----------
+  # dashboards:
+  # ontime_dashboard:
+  # display_name: 'On-Time Performance'
+  # file_path:./src/dashboards/ontime.lvdash.json
+  # warehouse_id: ${var.warehouse_id}
+  # dataset_catalog: ${var.catalog}
+  # dataset_schema: ${var.schema}

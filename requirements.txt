@@ -1,0 +1,13 @@
+# AI Engineering Lab, core Python dependencies for Weeks 1 to 8.
+# Later weeks add extras in the first cell of each notebook. Install with:
+# python -m pip install -r requirements.txt
+
+numpy>=1.26
+pandas>=2.1
+matplotlib>=3.8
+scikit-learn>=1.4
+jupyter>=1.0
+ipykernel>=6.29
+pyarrow>=15.0
+duckdb>=1.0
+openpyxl>=3.1
